@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ระบบรดน้ำต้นไม้แบบตั้งเวลาได้ ควบคุมผ่าน Wifi</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<style type="text/css">
+		body{
+			font-family: 'Sriracha', cursive;
+		}
+		.btn-footer{
+			padding: 10px;
+			margin-top: 30px;
+		}
+	</style>
+</head>
+<body data-gr-c-s-loaded="true">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>ระบบรดน้ำต้นไม้แบบตั้งเวลาได้ ควบคุมผ่าน Wifi</h1>
+        <p>โปรเจครายวิชา 322224 Digital Logic and Computer Interface </p>
+      </div>
+    </div>
+
+    <div class="container">
+    	<div class="col-md-6">
+			<div class="panel panel-primary">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">ตั้งค่ารดน้ำต้นไม้</h3>
+			  </div>
+			  <div class="panel-body">
+			  	<div class="form-horizontal">
+				    <div class="form-group">
+				    	<label class="control-label col-sm-3">Turn</label>
+					    <div class="col-sm-9">
+					    	<div class="input-group">
+					    		<span class="input-group-btn">
+					    			<button class="btn btn-default" id="btnOn">ON</button>
+					    			<button class="btn btn-default" id="btnOff">OFF</button>
+					    		</span>
+					    	</div>
+					    </div>
+				    </div>
+				    <!-- Form Group -->
+				    <div class="form-group">
+				    	<label class="control-label col-sm-3">ทำงานในอีก </label>
+				    	<div class="col-sm-9">
+				    		<div class="input-group">
+				    			<input type="text" name="hour" class="form-control" placeholder="ชั่วโมง">
+				    			<span class="input-group-btn" style="width: 0px;"></span>
+				    			<input type="text" name="minute" class="form-control" placeholder="นาที">
+				    			<span class="input-group-btn">
+				    				<button class="btn btn-success" id="setCount">Start</button>
+				    			</span>
+				    		</div>
+				    	</div>
+				  	</div>
+				  	<!-- Form Group -->
+				  	<div class="form-group">
+				    	<label class="control-label col-sm-3">รดน้ำวันที่ </label>
+				    	<div class="col-sm-9">
+				    		<input type="text" name="time" class="form-control" placeholder="เวลา">
+			    			<select name="date" class="form-control" multiple>
+			    				<option value="0">Sunday</option>
+			    				<option value="1">Monday</option>
+			    				<option value="2">Tuesday</option>
+			    				<option value="3">Wednesday</option>
+			    				<option value="4">Thursday</option>
+			    				<option value="5">Friday</option>
+			    				<option value="6">Saturday</option>
+			    			</select>
+			    			<button class="btn btn-success btn-block" id="setDate">SET</button>
+				    	</div>
+				  	</div>
+				  	<!-- Form Group -->
+				</div>
+			</div>
+	    	</div>
+	    	<!-- Panel -->
+    	</div>
+    	<div class="col-md-6">
+    		<div class="panel panel-warning">
+    			<div class="panel-heading">
+    				<h3 class="panel-title">สถานะ</h3>
+    			</div>
+    			<div class="panel-body">
+    				<h4 style="padding-bottom: 10px;">การทำงาน <span class="label label-success" id="status">Loading...</span></h4>
+    				<h4 style="padding-bottom: 10px;">ทำงานในอีก <span class="label label-info" id="countdown">Loading...</span></h4>
+    				<h4 style="padding-bottom: 10px;">ตั้งเวลาทำงาน <span class="label label-warning" id="settime">Loading...</span></h4>
+    				<h4 style="padding-bottom: 10px;">เวลาปัจจุบัน <span class="label label-danger" id="datenow">Loading...</span></h4>
+    				<button class="btn btn-danger btn-block" id="btnLogout">Logout</button>
+    			</div>
+    		</div>
+    	</div>
+      <hr>
+    </div> <!-- /container -->
+    <div class="container">
+		<footer>
+จัดทำโดย<br/>
+นายณบดี ศรีวิชัย 573021095-9<br/>
+นางสาวปวริศา อินพานิช 573020384-7<br/>
+นางสาวสุมลรัตน์ น้อยคูณ 5730203978<br/>
+นางสาวนารีนารถ เนรัญชร 573021104-4 <br/>
+นายวนราช คำหล้า 573021111-7<br/>
+		</footer>
+	</div>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+<script src="config.js"></script>
+<script src="index.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
